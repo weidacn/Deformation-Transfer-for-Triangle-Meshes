@@ -274,8 +274,8 @@ class RegistrationSolver(BasicRegistrationSolver):
         value = []
         for face_idx, face in enumerate(faces_with_nm):
             v0_id, v1_id, v2_id, v3_id = face
-            v0, v1, = np.array(vts_with_nm[v0_id - 1], dtype=np.float), np.array(vts_with_nm[v1_id - 1], dtype=np.float)
-            v2, v3, = np.array(vts_with_nm[v2_id - 1], dtype=np.float), np.array(vts_with_nm[v3_id - 1], dtype=np.float)
+            v0, v1, = np.array(vts_with_nm[v0_id - 1], dtype=np.float64), np.array(vts_with_nm[v1_id - 1], dtype=np.float64)
+            v2, v3, = np.array(vts_with_nm[v2_id - 1], dtype=np.float64), np.array(vts_with_nm[v3_id - 1], dtype=np.float64)
             # build the local coordinate system's axis for each triangle face
             a1, a2, a3 = (v1 - v0).reshape(-1, 1), (v2 - v0).reshape(-1, 1), (v3 - v0).reshape(-1, 1)
             # build the local coordinate system as a square matrix with shape (3, 3)

@@ -79,7 +79,7 @@ def add_extra_normal_vertex_for_triangle(vertices: list, faces: list):
     # 注意face中的vertex序号是1开始的
     for face in f_new:
         v0_id, v1_id, v2_id = face
-        v0, v1, v2 = np.array(vertices[v0_id - 1], dtype=np.float), np.array(vertices[v1_id - 1], dtype=np.float), np.array(vertices[v2_id - 1], dtype=np.float)
+        v0, v1, v2 = np.array(vertices[v0_id - 1], dtype=np.float64), np.array(vertices[v1_id - 1], dtype=np.float64), np.array(vertices[v2_id - 1], dtype=np.float64)
         e1 = v1 - v0
         e2 = v2 - v0
         normal = np.cross(e1, e2) / np.linalg.norm(np.cross(e1, e2))

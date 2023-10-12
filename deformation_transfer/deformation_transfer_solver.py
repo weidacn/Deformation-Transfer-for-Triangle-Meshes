@@ -147,9 +147,9 @@ class DeformationTransferSolver(BasicDeformationTransferSolver):
         :return two matrix with shape [2, 3] and [3, 2]
         """
         v0_id, v1_id, v2_id = one_face
-        v0 = np.array(ref_vts[v0_id - 1], dtype=np.float)
-        v1 = np.array(ref_vts[v1_id - 1], dtype=np.float)
-        v2 = np.array(ref_vts[v2_id - 1], dtype=np.float)
+        v0 = np.array(ref_vts[v0_id - 1], dtype=np.float64)
+        v1 = np.array(ref_vts[v1_id - 1], dtype=np.float64)
+        v2 = np.array(ref_vts[v2_id - 1], dtype=np.float64)
         # get the 2 edge of one triangle face
         a1 = (v1 - v0).reshape(-1, 1)
         a2 = (v2 - v0).reshape(-1, 1)
@@ -168,15 +168,15 @@ class DeformationTransferSolver(BasicDeformationTransferSolver):
         """
         v0_id, v1_id, v2_id, v3_id = one_face_with_nm
         # get the vertices of the corresponded reference triangle
-        src_v0_ref = np.array(src_ref_vts_with_nm[v0_id - 1], dtype=np.float)
-        src_v1_ref = np.array(src_ref_vts_with_nm[v1_id - 1], dtype=np.float)
-        src_v2_ref = np.array(src_ref_vts_with_nm[v2_id - 1], dtype=np.float)
-        src_v3_ref = np.array(src_ref_vts_with_nm[v3_id - 1], dtype=np.float)
+        src_v0_ref = np.array(src_ref_vts_with_nm[v0_id - 1], dtype=np.float64)
+        src_v1_ref = np.array(src_ref_vts_with_nm[v1_id - 1], dtype=np.float64)
+        src_v2_ref = np.array(src_ref_vts_with_nm[v2_id - 1], dtype=np.float64)
+        src_v3_ref = np.array(src_ref_vts_with_nm[v3_id - 1], dtype=np.float64)
         # get the vertices of the corresponded deformed triangle
-        src_v0_def = np.array(src_def_vts_with_nm[v0_id - 1], dtype=np.float)
-        src_v1_def = np.array(src_def_vts_with_nm[v1_id - 1], dtype=np.float)
-        src_v2_def = np.array(src_def_vts_with_nm[v2_id - 1], dtype=np.float)
-        src_v3_def = np.array(src_def_vts_with_nm[v3_id - 1], dtype=np.float)
+        src_v0_def = np.array(src_def_vts_with_nm[v0_id - 1], dtype=np.float64)
+        src_v1_def = np.array(src_def_vts_with_nm[v1_id - 1], dtype=np.float64)
+        src_v2_def = np.array(src_def_vts_with_nm[v2_id - 1], dtype=np.float64)
+        src_v3_def = np.array(src_def_vts_with_nm[v3_id - 1], dtype=np.float64)
         # build the local coordinate system's axis for reference triangle face
         src_a1_ref = (src_v1_ref - src_v0_ref).reshape(-1, 1)
         src_a2_ref = (src_v2_ref - src_v0_ref).reshape(-1, 1)
